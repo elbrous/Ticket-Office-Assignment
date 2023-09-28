@@ -1,0 +1,14 @@
+C:\Users\46722\source\repos\TicketOffice\bin\Debug\net6.0\TicketOffice.exe
+C:\Users\46722\source\repos\TicketOffice\bin\Debug\net6.0\TicketOffice.deps.json
+C:\Users\46722\source\repos\TicketOffice\bin\Debug\net6.0\TicketOffice.runtimeconfig.json
+C:\Users\46722\source\repos\TicketOffice\bin\Debug\net6.0\TicketOffice.dll
+C:\Users\46722\source\repos\TicketOffice\bin\Debug\net6.0\TicketOffice.pdb
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.AssemblyInfoInputs.cache
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.AssemblyInfo.cs
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.csproj.CoreCompileInputs.cache
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.dll
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\refint\TicketOffice.dll
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.pdb
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\TicketOffice.genruntimeconfig.cache
+C:\Users\46722\source\repos\TicketOffice\obj\Debug\net6.0\ref\TicketOffice.dll
