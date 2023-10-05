@@ -1,6 +1,6 @@
 ﻿using System;
 
-public enum PlacePreference
+public enum Place
 {
     Seated,
     Standing
@@ -8,40 +8,43 @@ public enum PlacePreference
 
 public class Ticket
 {
-    public int Age { get; set; }
-    public PlacePreference Place { get; set; }
+    public int Age { get; private set; }
+    public Place Place { get; private set; }
+    public int Number { get; private set; }
 
-    public Ticket(int age, PlacePreference place)
+    public Ticket(int age, Place place)
     {
         Age = age;
         Place = place;
+        Number = TicketNumberGenerator();
     }
 
-    public int PriceSetter()
+    public int Price()
     {
         int price;
         switch (Age)
         {
             case int n when (n <= 11):
-                price = (Place == PlacePreference.Seated) ? 50 : 25;
+                price = (Place == Place.Seated) ? 50 : 25;
                 break;
             case int n when (n >= 12 && n <= 64):
-                price = (Place == PlacePreference.Seated) ? 170 : 110;
+                price = (Place == Place.Seated) ? 170 : 110;
                 break;
             default:
-                price = (Place == PlacePreference.Seated) ? 100 : 60;
+                price = (Place == Place.Seated) ? 100 : 60;
                 break;
         }
         return price;
     }
 
-    public decimal TaxCalculator(int price)
+    public decimal Tax()
     {
+        int price = Price();
         decimal tax = (decimal)((1 - 1 / 1.06) * price);
         return tax;
     }
 
-    public int TicketNumberGenerator()
+    private int TicketNumberGenerator()
     {
         Random random = new Random();
         return random.Next(1, 8001);
@@ -58,18 +61,15 @@ class Program
 
         Console.Write("Enter your preference (Seated or Standing): ");
         string preferenceInput = Console.ReadLine();
-        PlacePreference placePreference;
+        Place placePreference;
         Enum.TryParse(preferenceInput, true, out placePreference);
 
         Ticket customerTicket = new Ticket(age, placePreference);
 
-        int ticketPrice = customerTicket.PriceSetter();
-        decimal tax = customerTicket.TaxCalculator(ticketPrice);
-        int ticketNumber = customerTicket.TicketNumberGenerator();
-
-        Console.WriteLine($"Total Price: {ticketPrice} SEK");
-        Console.WriteLine($"Tax: {tax} SEK");
-        Console.WriteLine($"Ticket Number: {ticketNumber}");
+        Console.WriteLine($"Total Price: {customerTicket.Price()} SEK");
+        Console.WriteLine($"Tax: {customerTicket.Tax()} SEK");
+        Console.WriteLine($"Ticket Number: {customerTicket.Number}");
         Console.WriteLine("Thank you for choosing us!");
     }
 }
+
